@@ -1,6 +1,13 @@
-name = "ai-worker"
+name = "ai-workers"
 main = "src/index.ts"
 compatibility_date = "2025-06-08"
 [
 vars
 ]
+ENVIRONMENT = "production"
+DOMAIN = "yz20250606.top"
+[[
+secrets
+]]
+name = "DEEPSEEK_API_KEY"
+DEEPSEEK_API_KEY = { binding = "DEEPSEEK_API_KEY" }

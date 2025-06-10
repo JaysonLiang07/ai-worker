@@ -91,11 +91,14 @@ export default {
 							console.log('处理查询：', prompt);
 
 							try {
+								console.log('请求头配置:', {
+									authorizationHeader: `Bearer ${env.DEEPSEEK_API_KEY}`,
+								  });
 								const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
 									method: 'POST',
 									headers: {
 										'Content-Type': 'application/json',
-										Authorization: `Bearer sk-0e367514f41941f895a8cddcfd1ac92b`,
+										Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
 									},
 									body: JSON.stringify({
 										model: 'deepseek-chat',
