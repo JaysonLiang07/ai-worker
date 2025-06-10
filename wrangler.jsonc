@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "broken-waterfall-f3c1",
+	"name": "ai-workers",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-06-10",
 	"observability": {
