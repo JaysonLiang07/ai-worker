@@ -5,7 +5,7 @@ interface Env {
 	DEEPSEEK_API_KEY: string;
 	// 如果有其他环境变量，也可以在这里添加
 	ENVIRONMENT?: string;
-	DOAMIN: string;
+	DOMAIN: string;
 }
 
 // DeepSeek API 响应数据的接口定义
@@ -41,7 +41,7 @@ function getCORSHeaders(request: Request, env: Env): Record<string, string> {
 
 	if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
 		allowedOrigin = origin;
-	} else if (origin.endsWith(env.DOAMIN)) {
+	} else if (origin.endsWith(env.DOMAIN)) {
 		allowedOrigin = origin;
 	} else {
 		// 添加默认允许的源，或使用 '*' 作为后备（如果适合你的使用场景）
@@ -95,7 +95,7 @@ export default {
 									method: 'POST',
 									headers: {
 										'Content-Type': 'application/json',
-										Authorization: `Bearer ${env.DEEPSEEK_API_KEY}`,
+										Authorization: `Bearer sk-0e367514f41941f895a8cddcfd1ac92b`,
 									},
 									body: JSON.stringify({
 										model: 'deepseek-chat',
@@ -129,7 +129,7 @@ export default {
 			landingPage: false, // 禁用默认的登陆页
 			cors: false, // 禁用内置的 CORS 处理，我们自己处理
 			graphiql: !isProduction, // 在非生产环境启用 GraphiQL
-			graphqlEndpoint: '/graphql', // 使用请求的实际路径
+			graphqlEndpoint: path, // 使用请求的实际路径
 			logging: true, // 启用日志记录
 		});
 

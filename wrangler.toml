@@ -4,6 +4,3 @@ compatibility_date = "2025-06-08"
 [
 vars
 ]
-DOMAIN = "http://yz20250606.top"  # 你的前端域名（如 example.com）
-ENVIRONMENT = "development"  # 环境类型（development/production）
-DEBUG = true  # 开发模式下允许所有 CORS 来源
